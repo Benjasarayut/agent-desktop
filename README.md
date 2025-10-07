@@ -27,41 +27,41 @@
 
 ## 📁 โครงสร้างโปรเจกต์
 
+```text
 agent-desktop/
-├─ package.json
-├─ .env.example
-├─ main.js
-├─ preload.js
-│
-├─ public/
-│ ├─ index.html
-│ └─ assets/
-│ ├─ icon.png
-│ ├─ tray-icon.png
-│ └─ notify.mp3
-│
-├─ src/
-│ ├─ index.js
-│ ├─ App.js
-│ ├─ components/
-│ │ ├─ LoginForm.js
-│ │ ├─ StatusPanel.js
-│ │ ├─ MessagePanel.js
-│ │ └─ AgentInfo.js
-│ ├─ services/
-│ │ ├─ api.js
-│ │ ├─ socket.js
-│ │ └─ notifications.js
-│ ├─ styles/
-│ │ ├─ App.css
-│ │ └─ components.css
-│ └─ utils/
-│ ├─ dateUtils.js
-│ └─ validation.js
-└─ build/ 
+|-- package.json
+|-- .env.example
+|-- main.js
+|-- preload.js
+|-- public/
+|   |-- index.html
+|   `-- assets/
+|       |-- icon.png
+|       |-- tray-icon.png
+|       `-- notify.mp3
+|-- src/
+|   |-- index.js
+|   |-- App.js
+|   |-- components/
+|   |   |-- LoginForm.js
+|   |   |-- StatusPanel.js
+|   |   |-- MessagePanel.js
+|   |   `-- AgentInfo.js
+|   |-- services/
+|   |   |-- api.js
+|   |   |-- socket.js
+|   |   `-- notifications.js
+|   |-- styles/
+|   |   |-- App.css
+|   |   `-- components.css
+|   `-- utils/
+|       |-- dateUtils.js
+|       `-- validation.js
+`-- build/
 
 
 ---
+```
 
 ## 🚀 เริ่มต้นใช้งาน
 
