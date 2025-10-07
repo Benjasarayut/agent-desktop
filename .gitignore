@@ -8,15 +8,15 @@ npm-debug.log*
 yarn-debug.log*
 pnpm-debug.log*
 
-# --- Env / Secrets (อย่าขึ้น) ---
+# --- Env / Secrets (do NOT commit) ---
 .env
 .env.local
 .env.*.local
 *.env
 *.env.*
-!.env.example           # allow only sample env
+!.env.example          # allow only the sample env
 
-# SSH / Certificates / Tokens
+# Keys / tokens
 id_rsa
 id_ed25519
 *.pem
@@ -29,7 +29,10 @@ id_ed25519
 .npmrc
 .yarnrc
 
-# IDE / OS junk
+# --- IDE / OS junk ---
+.vscode/
 .DS_Store
 Thumbs.db
-.vscode/
+
+# --- Electron ---
+*.asar
