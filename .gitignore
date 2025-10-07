@@ -1,0 +1,35 @@
+# --- Node & build artifacts ---
+node_modules/
+build/
+dist/
+out/
+*.log
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+
+# --- Env / Secrets (อย่าขึ้น) ---
+.env
+.env.local
+.env.*.local
+*.env
+*.env.*
+!.env.example           # allow only sample env
+
+# SSH / Certificates / Tokens
+id_rsa
+id_ed25519
+*.pem
+*.key
+*.crt
+*.p12
+*.pfx
+*.jks
+*.keystore
+.npmrc
+.yarnrc
+
+# IDE / OS junk
+.DS_Store
+Thumbs.db
+.vscode/

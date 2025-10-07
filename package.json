@@ -1,0 +1,70 @@
+{
+  "name": "agent-desktop",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Agent Wallboard Desktop Application",
+  "main": "main.js",
+  "author": "Your Team",
+  "license": "MIT",
+  "scripts": {
+    "start": "react-scripts start",
+    "build:web": "react-scripts build",
+    "electron": "cross-env NODE_ENV=production electron .",
+    "electron-dev": "concurrently \"cross-env NODE_ENV=development react-scripts start\" \"wait-on http://localhost:3000 && cross-env NODE_ENV=development electron .\"",
+    "dist": "npm run build:web && electron-builder"
+  },
+  "dependencies": {
+    "electron": "^28.3.3",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-scripts": "5.0.1",
+    "socket.io-client": "^4.7.2"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.0",
+    "cross-env": "^7.0.3",
+    "wait-on": "^7.0.1",
+    "electron-builder": "^24.6.3"
+  },
+  "build": {
+    "appId": "com.agentwallboard.desktop",
+    "asar": true,
+    "files": [
+      "build/**/*",
+      "main.js",
+      "preload.js",
+      "public/assets/**/*",
+      "package.json"
+    ],
+    "extraResources": [
+      {
+        "from": "public/assets",
+        "to": "assets"
+      }
+    ],
+    "win": {
+      "target": [
+        "nsis"
+      ],
+      "icon": "public/assets/icon.png"
+    },
+    "nsis": {
+      "oneClick": true,
+      "perMachine": false,
+      "allowElevation": true,
+      "allowToChangeInstallationDirectory": false
+    }
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
