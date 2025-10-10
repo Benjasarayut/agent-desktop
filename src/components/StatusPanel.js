@@ -15,16 +15,24 @@ export default function StatusPanel({ currentStatus, onStatusChange }) {
         <span className={`status ${currentStatus.toLowerCase()}`}>{currentStatus}</span>
       </h3>
       <div className="status-buttons">
-        {statuses.map((s) => (
-          <button
-            key={s.key}
-            className={`status-btn ${s.key === currentStatus ? 'active' : ''}`}
-            onClick={() => onStatusChange(s.key)}
-            style={{ backgroundColor: s.color }}
-          >
-            {s.label}
-          </button>
-        ))}
+        {statuses.map((s) => {
+          const isActive = s.key === currentStatus;
+          return (
+            <button
+              key={s.key}
+              className={`status-btn ${isActive ? 'active' : ''}`}
+              disabled={isActive}
+              onClick={() => { if (!isActive) onStatusChange(s.key); }}
+              style={{
+                backgroundColor: isActive ? '#e5e7eb' : s.color,
+                color: isActive ? '#6b7280' : '#ffffff'
+              }}
+              aria-pressed={isActive}
+            >
+              {s.label}
+            </button>
+          );
+        })}
       </div>
     </div>
   );
